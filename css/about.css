@@ -10,7 +10,7 @@
     background-position: center;
   
     /* The image used */
-    background-image: url("../Image/128744.jpg");
+    background-image: url("../Image/BG_photo.jpeg");
   
     /* Add the blur effect */
     filter: blur(8px);
@@ -21,7 +21,7 @@
   
     /* Add position: relative to enable absolutely positioned elements inside the image (place text) */
     position: fixed;
-    z-index: -1;
+    z-index: -5;
 }
 
 body {
@@ -112,11 +112,12 @@ body {
 }
 
 .info__section p {
-    color: #aaabb0;
+    color: #dedce1;
     font-size: 18px;
     line-height: 1.2;
     text-align: justify;
     padding-bottom: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .personal__info {
@@ -134,7 +135,7 @@ body {
 }
 
 .personal__info div span {
-    color: #aaabb9;
+    color: #cacbde;
     letter-spacing: 1px;
 }
 
@@ -174,4 +175,52 @@ body {
 .info__section button:hover {
     color: #787cb5;
     border-color: #aaabb0;
+}
+
+.fog {
+    position: relative;
+    height: 300vh;
+    width: 200%;
+    z-index: 1;
+}
+
+.fog-container {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.fog-img {
+    position: absolute;
+    height: 300vh;
+    width: 300vw;
+    z-index: 2;
+}
+
+.fog-img-first {
+    background: url("../Image/fog-1.png");
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: center;
+    animation: marquee 60s linear infinite;
+}
+
+.fog-img-second {
+    background: url("../Image/fog-2.png");
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: center;
+    animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-100vw, 0, 30vw);
+    }
 }
